@@ -446,6 +446,15 @@ body {
     gap: 30px;
 }
 
+/* Better responsive grid handling */
+@supports (display: grid) {
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+        gap: 30px;
+    }
+}
+
 .service-card {
     background: white;
     border: 1px solid #e5e7eb;
@@ -583,35 +592,358 @@ body {
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    .header-content,
-    .hero-grid {
-        grid-template-columns: 1fr;
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .header-content {
+        grid-template-columns: 1fr 350px;
         gap: 40px;
     }
     
-    .emergency-card {
-        margin-top: 30px;
+    .hero-grid {
+        gap: 60px;
     }
     
-    .hero-content h1 {
-        font-size: 2.2rem;
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .service-card {
+        padding: 28px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .emergency-bar {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+    }
+    
+    .header {
+        padding: 70px 0 30px 0;
+    }
+    
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .logo-section {
+        text-align: center;
+    }
+    
+    .logo {
+        font-size: 2.4rem;
+    }
+    
+    .emergency-card {
+        margin-top: 0;
+        padding: 35px 25px;
     }
     
     .phone-number {
         font-size: 2rem;
+        letter-spacing: 1px;
     }
     
-    .cta-phone {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .ambulance-visual {
+        padding: 30px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .ambulance-icon {
+        width: 160px;
+        height: 100px;
+    }
+    
+    .services {
+        padding: 80px 0;
+    }
+    
+    .section-title {
         font-size: 2.2rem;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
-
+    
+    .service-card {
+        padding: 25px;
+    }
+    
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-phone {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+    
     .tech-specs {
         justify-content: center;
+    }
+    
+    .call-button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .emergency-bar {
+        cursor: pointer;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .emergency-bar {
+        font-size: 0.75rem;
+        padding: 8px 15px;
+    }
+    
+    .header {
+        padding: 60px 0 25px 0;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .emergency-card {
+        padding: 30px 20px;
+    }
+    
+    .emergency-title {
+        font-size: 1rem;
+    }
+    
+    .phone-number {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .call-button {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-section {
+        padding: 50px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .guarantee {
+        padding: 16px;
+    }
+    
+    .guarantee-title {
+        font-size: 1rem;
+    }
+    
+    .ambulance-visual {
+        padding: 25px;
+    }
+    
+    .ambulance-icon {
+        width: 140px;
+        height: 80px;
+    }
+    
+    .ambulance-icon::before {
+        font-size: 2.5rem;
+    }
+    
+    .visual-stats {
+        gap: 15px;
+    }
+    
+    .stat {
+        padding: 12px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .services {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .service-title {
+        font-size: 1.2rem;
+    }
+    
+    .service-description {
+        font-size: 0.9rem;
+    }
+    
+    .cta-section {
+        padding: 50px 0;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-phone {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+    }
+    
+    .cta-section .call-button {
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+    
+    .tech-specs {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .tech-badge {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-content {
+        font-size: 0.9rem;
+    }
+    
+    .company-info {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .phone-number {
+        font-size: 1.6rem;
+    }
+    
+    .cta-phone {
+        font-size: 1.8rem;
+    }
+    
+    .ambulance-icon {
+        width: 120px;
+        height: 70px;
+    }
+    
+    .ambulance-icon::before {
+        font-size: 2rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .services {
+        padding: 60px 0;
+    }
+    
+    .cta-section {
+        padding: 40px 0;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .ambulance-icon::before {
+        font-weight: 300;
     }
 }
 
