@@ -331,7 +331,6 @@
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
-            transform: translateX(140px);
         }
 
         .tech-badge {
@@ -601,7 +600,7 @@
             margin-top: 10px;
         }
 
-        /* Responsive Design */
+        /* Responsive Design - Key Fixes */
         @media (max-width: 1024px) {
             .container {
                 padding: 0 30px;
@@ -624,7 +623,7 @@
         @media (max-width: 768px) {
             .emergency-bar {
                 font-size: 0.8rem;
-                padding: 10px 20px;
+                padding: 10px 15px;
             }
             
             .header {
@@ -640,11 +639,12 @@
             .main-logo {
                 flex-direction: column;
                 gap: 15px;
+                align-items: center;
             }
             
             .logo-image {
-                width: 200px;
-                height: 200px;
+                width: 180px;
+                height: 180px;
             }
             
             .logo {
@@ -655,9 +655,17 @@
                 font-size: 1.1rem;
             }
             
+            /* Remove the problematic transform on tech specs */
+            .tech-specs {
+                transform: none;
+                margin-top: 20px;
+            }
+            
             .emergency-card {
                 margin-top: 0;
-                padding: 35px 25px;
+                padding: 30px 25px;
+                max-width: 400px;
+                margin: 0 auto;
             }
             
             .phone-number {
@@ -671,7 +679,7 @@
             
             .hero-grid {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 40px;
                 text-align: center;
             }
             
@@ -695,7 +703,7 @@
             }
             
             .services {
-                padding: 80px 0;
+                padding: 70px 0;
             }
             
             .section-title {
@@ -704,6 +712,11 @@
             
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .service-card {
+                padding: 25px;
             }
             
             .cta-section {
@@ -722,12 +735,12 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 20px;
+                padding: 0 15px;
             }
             
             .emergency-bar {
                 font-size: 0.75rem;
-                padding: 8px 15px;
+                padding: 8px 10px;
             }
             
             .header {
@@ -735,8 +748,8 @@
             }
             
             .logo-image {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
             }
             
             .logo {
@@ -747,8 +760,20 @@
                 font-size: 1rem;
             }
             
+            .tech-specs {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .tech-badge {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
             .emergency-card {
-                padding: 30px 20px;
+                padding: 25px 20px;
+                max-width: 350px;
             }
             
             .phone-number {
@@ -757,7 +782,7 @@
             }
             
             .call-button {
-                padding: 14px 28px;
+                padding: 12px 24px;
                 font-size: 0.9rem;
             }
             
@@ -779,16 +804,16 @@
             }
             
             .ambulance-visual {
-                padding: 25px;
+                padding: 20px;
             }
             
             .ambulance-icon {
-                width: 140px;
+                width: 130px;
                 height: 80px;
             }
             
             .ambulance-icon::before {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .services {
@@ -796,7 +821,7 @@
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
             
             .service-card {
@@ -806,7 +831,7 @@
             .service-icon {
                 width: 50px;
                 height: 50px;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             
             .service-title {
@@ -825,17 +850,15 @@
                 font-size: 2rem;
                 letter-spacing: 0.5px;
             }
-            
-            .tech-specs {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-            }
         }
 
         @media (max-width: 360px) {
+            .container {
+                padding: 0 12px;
+            }
+            
             .logo {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
             
             .hero-content h1 {
@@ -851,12 +874,17 @@
             }
             
             .ambulance-icon {
-                width: 120px;
+                width: 110px;
                 height: 70px;
             }
             
             .ambulance-icon::before {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .emergency-card {
+                max-width: 300px;
+                padding: 20px 15px;
             }
         }
 
