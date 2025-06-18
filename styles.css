@@ -896,3 +896,417 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Partnerships Section CSS - Add to your styles.css */
+
+.partnerships-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partnerships-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="partnership-pattern" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1.5" fill="rgba(45, 90, 61, 0.03)"/></pattern></defs><rect width="60" height="60" fill="url(%23partnership-pattern)"/></svg>');
+    animation: patternMove 30s linear infinite;
+}
+
+@keyframes patternMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(60px) translateY(60px); }
+}
+
+.partnerships-content {
+    position: relative;
+    z-index: 2;
+}
+
+.current-partners {
+    margin-bottom: 80px;
+}
+
+.partners-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.partners-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #c53030, #a53030);
+    border-radius: 2px;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.partner-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(197, 48, 48, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.partner-card:hover::before {
+    left: 100%;
+}
+
+.partner-card:hover {
+    border-color: #c53030;
+    box-shadow: 0 20px 40px rgba(197, 48, 48, 0.15);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.partner-logo {
+    margin-bottom: 20px;
+}
+
+.partner-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 2px solid #f3f4f6;
+    padding: 10px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-image {
+    border-color: #c53030;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(197, 48, 48, 0.2);
+}
+
+.partner-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.partner-description {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.collaboration-section {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.collaboration-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.collaboration-description {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #f1f5f9;
+    border-color: #c53030;
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #c53030, #a53030);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.contact-link {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #c53030;
+}
+
+.partnership-form {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.form-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #c53030;
+    box-shadow: 0 0 0 3px rgba(197, 48, 48, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #c53030 0%, #a53030 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.form-submit:hover::before {
+    left: 100%;
+}
+
+.form-submit:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(197, 48, 48, 0.3);
+}
+
+.form-submit:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .collaboration-grid {
+        gap: 40px;
+    }
+    
+    .collaboration-section {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partnerships-section {
+        padding: 70px 0;
+    }
+    
+    .collaboration-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .collaboration-section {
+        padding: 30px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .contact-options {
+        gap: 16px;
+    }
+    
+    .contact-item {
+        padding: 16px;
+    }
+    
+    .partner-card {
+        padding: 25px;
+    }
+    
+    .partners-title {
+        font-size: 1.6rem;
+    }
+    
+    .collaboration-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partnerships-section {
+        padding: 60px 0;
+    }
+    
+    .collaboration-section {
+        padding: 25px 20px;
+    }
+    
+    .partnership-form {
+        padding: 30px 20px;
+    }
+    
+    .form-title {
+        font-size: 1.4rem;
+    }
+    
+    .collaboration-title {
+        font-size: 1.6rem;
+    }
+    
+    .collaboration-description {
+        font-size: 1rem;
+    }
+    
+    .contact-item {
+        padding: 14px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .partner-card {
+        padding: 20px;
+    }
+    
+    .partner-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .partnerships-section::before,
+    .partner-card::before,
+    .form-submit::before {
+        animation: none !important;
+        transition: none !important;
+    }
+}
