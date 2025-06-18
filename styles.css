@@ -450,64 +450,112 @@
             background: white;
         }
 
-        .section-header {
+           .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
         }
 
-        .section-title {
-            font-size: 2.5rem;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+            .section-title {
+            font-size: 2.8rem;
             font-weight: 800;
             color: #1f2937;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
-            color: #1f2937;
-            max-width: 600px;
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
-        .services-grid {
+                .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .service-card {
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 32px;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 40px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(197, 48, 48, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
         }
 
         .service-card:hover {
             border-color: #c53030;
-            box-shadow: 0 25px 50px rgba(197, 48, 48, 0.15);
-            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(197, 48, 48, 0.15),
+                0 0 0 1px rgba(197, 48, 48, 0.1);
+            transform: translateY(-12px) scale(1.02);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #c53030, #a53030);
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #c53030, #e53e3e);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(197, 48, 48, 0.3);
         }
 
         .service-card:hover .service-icon {
-            transform: rotate(5deg) scale(1.1);
-            box-shadow: 0 10px 20px rgba(197, 48, 48, 0.3);
+            transform: rotate(8deg) scale(1.1);
+            box-shadow: 0 15px 35px rgba(197, 48, 48, 0.4);
         }
 
         .service-title {
@@ -517,9 +565,77 @@
             margin-bottom: 12px;
         }
 
+         .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
         .service-description {
-            color: #6b7280;
-            line-height: 1.6;
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .service-description:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Enhanced responsive design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .services-grid {
+                max-width: 800px;
+                gap: 30px;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                padding: 70px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 60px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                max-width: 500px;
+            }
+            
+            .service-card {
+                padding: 30px;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .service-title {
+                font-size: 1.2rem;
+            }
         }
 
         .cta-section {
@@ -816,9 +932,11 @@
                 font-size: 2.2rem;
             }
             
-            .services {
-                padding: 60px 0;
-            }
+           .services {
+            padding: 100px 0;
+            background: white;
+        }
+
             
             .section-title {
                 font-size: 1.9rem;
